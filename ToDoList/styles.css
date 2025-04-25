@@ -1,0 +1,210 @@
+/* Modern Dark Theme */
+:root {
+    --bg-color: #1a1a1a;
+    --card-color: #2d2d2d;
+    --text-color: #e0e0e0;
+    --accent-color: #bb86fc;
+    --danger-color: #ff5555;
+    --input-bg: #3d3d3d;
+    --border-color: #444;
+  }
+  
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .todo-app {
+    background: var(--card-color);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #task-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.2s;
+  }
+  
+  #task-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
+  }
+  
+  #add-btn {
+    padding: 0 1.25rem;
+    background: var(--accent-color);
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  #add-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .filter-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #121212;
+  }
+  
+  #task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .task-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--input-bg);
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  
+  .task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    margin-right: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+  }
+  
+  .task-checkbox:checked {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+  
+  .task-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: #121212;
+    font-size: 14px;
+    left: 3px;
+    top: -1px;
+  }
+  
+  .task-text {
+    flex: 1;
+    font-size: 1rem;
+  }
+  
+  .task-item.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+  
+  .delete-btn {
+    background: transparent;
+    color: var(--danger-color);
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+  }
+  
+  .delete-btn:hover {
+    background: rgba(255, 85, 85, 0.1);
+  }
+  
+  #theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: #121212;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  
+  #theme-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Light Theme */
+  body.light-mode {
+    --bg-color: #f5f5f5;
+    --card-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #6200ee;
+    --danger-color: #d32f2f;
+    --input-bg: #f0f0f0;
+    --border-color: #e0e0e0;
+  }
