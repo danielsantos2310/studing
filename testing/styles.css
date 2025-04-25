@@ -1,0 +1,116 @@
+/* Modern Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121212; /* Dark background */
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Calculator Container */
+  .calculator {
+    width: 320px;
+    background: #1e1e1e; /* Dark gray */
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333; /* Subtle border */
+  }
+  
+  /* Display (Screen) */
+  .display {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 12px;
+    font-size: 36px;
+    text-align: right;
+    border: none;
+    background: #252525; /* Slightly lighter gray */
+    color: #fff; /* White text */
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  /* Buttons Grid */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  
+  /* Button Styles */
+  .btn {
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #333; /* Dark gray */
+    color: #fff; /* White text */
+    transition: all 0.2s;
+  }
+  
+  .btn:hover {
+    background: #444; /* Lighter gray on hover */
+    transform: translateY(-2px);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Operator Buttons (+, -, *, /) */
+  .operator {
+    background: #ff9500; /* Orange */
+    color: #fff;
+  }
+  
+  .operator:hover {
+    background: #ffaa33; /* Lighter orange */
+  }
+  
+  /* Clear Button (C) */
+  .clear {
+    background: #d1d1d1; /* Light gray */
+    color: #1e1e1e; /* Dark text */
+  }
+  
+  .clear:hover {
+    background: #e0e0e0;
+  }
+  
+  /* Equals Button (=) */
+  .equals {
+    background: #ff9500;
+    grid-column: span 2; /* Wider button */
+  }
+  
+  .equals:hover {
+    background: #ffaa33;
+  }
+  /* Backspace Button */
+.backspace {
+  background: #555; /* Dark gray */
+  font-size: 18px;
+}
+
+.backspace:hover {
+  background: #666;
+}
+
+/* Percentage Button */
+.percentage {
+  background: #555;
+}
+
+.percentage:hover {
+  background: #666;
+}
