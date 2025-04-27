@@ -2,7 +2,6 @@
 
 A simple yet powerful notes application with deadline reminders and dark mode support.
 
-![Notes App Screenshot](https://via.placeholder.com/600x400?text=Notes+App+Screenshot)
 
 ## Features ✨
 
