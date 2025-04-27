@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1a1a1a; /* Dark black background */
+  color: #ff4d4d; /* Red text */
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+body.dark .app-container {
+  background: #262626; /* Slightly lighter black */
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+body.dark h1 {
+  color: #ff4d4d; /* Red heading */
+}
+
+.note-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#note-text {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+body.dark #note-text {
+  background-color: #333;
+  color: #ff4d4d; /* Red text */
+  border-color: #ff4d4d;
+}
+
+#add-note {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body.dark #add-note {
+  background-color: #ff4d4d; /* Red button */
+}
+
+#add-note:hover {
+  background-color: #0056b3;
+}
+
+body.dark #add-note:hover {
+  background-color: #cc0000; /* Darker red */
+}
+
+#notes-container {
+  margin-top: 20px;
+}
+
+.note {
+  background: #e9ecef;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark .note {
+  background: #333; /* Dark background for notes */
+  color: #ff4d4d; /* Red text */
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+body.dark .delete-btn {
+  background: #ff4d4d; /* Red delete button */
+}
+
+.delete-btn:hover {
+  background: #a71d2a;
+}
+
+body.dark .delete-btn:hover {
+  background: #cc0000; /* Darker red */
+}
+
+.char-counter {
+  font-size: 0.9em;
+  color: #666;
+  text-align: right;
+}
+
+body.dark .char-counter {
+  color: #ff4d4d;
+}
+
+#notification-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffcccc;
+  color: #a71d2a;
+  border: 1px solid #a71d2a;
+  border-radius: 4px;
+  display: none;
+}
+
+body.dark #notification-container {
+  background-color: #330000;
+  color: #ff4d4d;
+}
