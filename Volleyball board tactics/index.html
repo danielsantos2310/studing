@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Tactics Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="toolbar">
+            <button id="add-player">Add Player</button>
+            <button id="draw-mode">Draw Mode</button>
+            <button id="erase-mode">Erase</button>
+            <button id="clear-all">Clear All</button>
+            <label for="brush-size">Brush Size:</label>
+            <input type="range" id="brush-size" min="1" max="20" value="5">
+            <label for="pen-color">Pen Color:</label>
+            <input type="color" id="pen-color" value="#000000">
+            <div id="brush-preview" style="width: 20px; height: 20px; background-color: #000000; border-radius: 50%;"></div>
+        </div>
+        <div class="court-container">
+            <canvas id="court-canvas"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
