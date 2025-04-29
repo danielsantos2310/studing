@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+        
+        <div class="timer-display">
+            <span id="hours">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+        </div>
+
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+
+        <div class="controls">
+            <input type="number" id="hours-input" placeholder="H" min="0">
+            <input type="number" id="minutes-input" placeholder="M" min="0" max="59">
+            <input type="number" id="seconds-input" placeholder="S" min="0" max="59">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="reset-btn">Reset</button>
+            <!-- Add this button to the controls div -->
+<button id="theme-btn">🌓 Toggle Theme</button>
+        </div>
+
+        <audio id="alarm" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
