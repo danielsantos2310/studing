@@ -175,7 +175,7 @@ class VolleyballTacticsBoard {
     applyRotationFormation(rotationId, formationType) {
         this.players = [];
         const formationData = this.rotationFormations[formationType]?.[rotationId];
-        if (!formationData) { console.error(`Formation data not found for ${formationType}, rotation ${rotationId}`); return; }
+        if (!formationData) { console.error(`Formation data not found for ${formationType, rotationId}`); return; }
         formationData.forEach(playerInfo => {
             const pos = this.courtPositions[playerInfo.gridPos];
             if (pos) {
@@ -236,21 +236,46 @@ class VolleyballTacticsBoard {
         const { x, y } = this.getEventCoordinates(event);
 
         if (this.draggingBall) {
-            this.ball.x = x; this.ball.y = y;
-            this.ball.xPercent = this.ball.x / this.canvas.width; 
+            this.ball.x = x;
+            this.ball.y = y;
+            this.ball.xPercent = this.ball.x / this.canvas.width;
             this.ball.yPercent = this.ball.y / this.canvas.height;
             this.updateCanvas();
+            return;
         }
+
         if (this.draggingPlayer) {
-            this.draggingPlayer.x = x; this.draggingPlayer.y = y;
+            const dragged = this.draggingPlayer;
+
+            // Example: Setter (Zone 6) movement constraints
+            if (dragged.role === "S") {
+                const mb = this.players.find(p => p.role === "MB2"); // Middle Blocker in Zone 1
+                const h2 = this.players.find(p => p.role === "OH2"); // Outside Hitter 2 in Zone 5
+
+                if (mb && x < mb.x) {
+                    return; // Prevent Setter from moving left of MB
+                }
+                if (h2 && y < h2.y) {
+                    return; // Prevent Setter from moving in front of H2
+                }
+            }
+
+            // Update player position only if no rules are violated
+            this.draggingPlayer.x = x;
+            this.draggingPlayer.y = y;
             this.draggingPlayer.xPercent = this.draggingPlayer.x / this.canvas.width;
             this.draggingPlayer.yPercent = this.draggingPlayer.y / this.canvas.height;
             this.updateCanvas();
         }
+
         if (this.isDrawing) {
-            this.drawingCtx.lineTo(x, y); this.drawingCtx.stroke(); this.updateCanvas();
+            this.drawingCtx.lineTo(x, y);
+            this.drawingCtx.stroke();
+            this.updateCanvas();
         } else if (this.isErasing) {
-            this.drawingCtx.lineTo(x, y); this.drawingCtx.stroke(); this.updateCanvas();
+            this.drawingCtx.lineTo(x, y);
+            this.drawingCtx.stroke();
+            this.updateCanvas();
         }
     }
 
@@ -329,6 +354,17 @@ class VolleyballTacticsBoard {
         this.ctx.drawImage(this.drawingCanvas, 0, 0);
         this.drawPlayers();
         this.drawBall();
+    }
+
+    getRow(pos) {
+        return ["1", "6", "5"].includes(pos) ? "back" : "front";
+    }
+
+    getColumn(pos) {
+        if (["4", "5"].includes(pos)) return "left";
+        if (["3", "6"].includes(pos)) return "middle";
+        if (["2", "1"].includes(pos)) return "right";
+        return "unknown";
     }
 }
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volleyball Tactics Board</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>🏐 Volleyball Tactics</h1>
+      <div class="utility-icons">
+        <button id="save-btn">💾</button>
+      </div>
+    </header>
+
+    <div class="controls">
+      <select id="formation-select">
+        <option value="5-1">5-1 Formation</option>
+        <option value="6-2">6-2 Formation</option>
+        <option value="4-2">4-2 Formation</option>
+      </select>
+      
+      <div class="mode-toggle">
+        <button id="serve-mode" class="active">Serve</button>
+        <button id="attack-mode">Attack</button>
+      </div>
+      
+      <div class="rotation-controls">
+        <button id="rotate-left">←</button>
+        <button id="rotate-right">→</button>
+      </div>
+    </div>
+
+    <div class="court-container" id="court-container">
+      <svg class="volleyball-court" viewBox="0 0 300 200">
+        <!-- Court outline -->
+        <rect x="10" y="10" width="280" height="180" rx="5" ry="5" class="court-outline"/>
+        <!-- Center line -->
+        <line x1="150" y1="10" x2="150" y2="190" class="court-line"/>
+        <!-- Position markers -->
+        <circle cx="75" cy="50" r="15" class="position-marker" data-pos="4"/>
+        <circle cx="150" cy="50" r="15" class="position-marker" data-pos="3"/>
+        <circle cx="225" cy="50" r="15" class="position-marker" data-pos="2"/>
+        <circle cx="75" cy="150" r="15" class="position-marker" data-pos="5"/>
+        <circle cx="150" cy="150" r="15" class="position-marker" data-pos="6"/>
+        <circle cx="225" cy="150" r="15" class="position-marker" data-pos="1"/>
+        <!-- Position numbers -->
+        <text x="75" y="55" text-anchor="middle" class="position-number">4</text>
+        <text x="150" y="55" text-anchor="middle" class="position-number">3</text>
+        <text x="225" y="55" text-anchor="middle" class="position-number">2</text>
+        <text x="75" y="155" text-anchor="middle" class="position-number">5</text>
+        <text x="150" y="155" text-anchor="middle" class="position-number">6</text>
+        <text x="225" y="155" text-anchor="middle" class="position-number">1</text>
+      </svg>
+    </div>
+
+    <div class="bench-area" id="bench-area">
+      <div class="player bench-player" draggable="true" data-role="setter" data-id="1">S</div>
+      <div class="player bench-player" draggable="true" data-role="outside" data-id="2">OH1</div>
+      <div class="player bench-player" draggable="true" data-role="outside" data-id="3">OH2</div>
+      <div class="player bench-player" draggable="true" data-role="middle" data-id="4">MB1</div>
+      <div class="player bench-player" draggable="true" data-role="middle" data-id="5">MB2</div>
+      <div class="player bench-player" draggable="true" data-role="libero" data-id="6">L</div>
+    </div>
+
+    <div class="action-buttons">
+      <button id="reset-btn">Reset</button>
+      <button id="save-formation-btn">Save</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
